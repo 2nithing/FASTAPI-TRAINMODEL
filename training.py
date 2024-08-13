@@ -27,7 +27,7 @@ def train(data,labels):
     output = Dense(2, activation='softmax', name='output')(x)
     
     model = Model(inputs=input_tensor,outputs=output)
-    model.compile(optimizer=Adam(),loss="categorical_crossentropy",metrics=["accuracy"])
+    model.compile(optimizer=Adam(),loss="categorical_crossentropy",metrics=["accuracy"],run_eagerly=True)
 
 
     aug = ImageDataGenerator(
